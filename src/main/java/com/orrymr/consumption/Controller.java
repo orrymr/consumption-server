@@ -22,8 +22,7 @@ public class Controller {
 	}
 
 	@RequestMapping(value = "/story", method = RequestMethod.POST)
-	public int postStory(@RequestBody Story story) {
-		mainService.saveStory(story);
-		return 0;
+	public Long postStory(@RequestBody Story story) {
+		return mainService.saveStory(story).getId();
 	}
 }
