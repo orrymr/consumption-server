@@ -1,4 +1,31 @@
 # Install Mysql on Ubuntu
+# Ref: https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-16-04
 
-sudo apt-get update
-sudo apt-get install mysql-server
+Create DB Scripts:
+
+CREATE DATABASE Pluto;
+USE Pluto;
+
+CREATE TABLE C_Story (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+story VARCHAR(100),
+added_by VARCHAR(25),
+up_votes int,
+down_votes int,
+add_date DATE);
+
+
+#### Curl Tests:
+
+curl -X POST \
+  http://localhost:8080/story \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: 1ec196a8-0b39-4957-b926-70f9e516b3d0' \
+  -d '{
+	"id": 1,
+	"story": "I eat paint and poop art",
+	"addedBy": "Og",
+	"upVotes": 0,
+	"downVotes": 0,
+	"addDate": "2011-12-03T10:15:30"
+}'
