@@ -28,4 +28,16 @@ public class Story {
 	@Column(name = "add_date")
 	private LocalDateTime addDate;
 
+	public Story(String addedBy, String story, Integer upVotes, Integer downVotes, LocalDateTime addDate) {
+		this.addedBy = addedBy;
+		this.story = story;
+		this.upVotes = upVotes;
+		this.downVotes = downVotes;
+		this.addDate = addDate;
+	}
+
+	public Story() {
+
+	}
+
 }

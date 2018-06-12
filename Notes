@@ -1,6 +1,8 @@
 # Install Mysql on Ubuntu
 # Ref: https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-16-04
 
+$  mysql -u root -p // <- get into mysql cmd line
+
 Create DB Scripts:
 
 CREATE DATABASE Pluto;
