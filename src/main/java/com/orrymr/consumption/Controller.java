@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 import static com.orrymr.consumption.Constants.APP_VERSION;
 
@@ -24,5 +27,10 @@ public class Controller {
 	@RequestMapping(value = "/story", method = RequestMethod.POST)
 	public Long postStory(@RequestBody Story story) {
 		return mainService.saveStory(story).getId();
+	}
+
+	@RequestMapping(value = "/story", method = RequestMethod.GET)
+	public List<Story> getStoryByPage(@RequestParam("page") Integer page){
+		return mainService.getStoryByPage(page);
 	}
 }
