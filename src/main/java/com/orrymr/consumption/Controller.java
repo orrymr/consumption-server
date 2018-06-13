@@ -3,6 +3,7 @@ package com.orrymr.consumption;
 import com.orrymr.consumption.dtos.Story;
 import com.orrymr.consumption.services.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import static com.orrymr.consumption.Constants.APP_VERSION;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class Controller {
 
